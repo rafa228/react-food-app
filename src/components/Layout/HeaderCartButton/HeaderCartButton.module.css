@@ -1,0 +1,83 @@
+.button {
+  cursor: pointer;
+  width: fit-content;
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding: 0.75rem 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.cartTitle {
+  font-size: 1rem;
+}
+
+.button:hover,
+.button:active {
+  background-color: rgba(179, 69, 252, 1);
+  box-shadow: 0 1px 18px 10px rgba(105, 6, 138, 1);
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.5rem;
+}
+
+.badge {
+  background-color:  rgba(105, 6, 138, 1);
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.button:hover .badge,
+.button:active .badge {
+  background-color: #69068a;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .cartTitle {
+    font-size: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cartTitle {
+    font-size: 0.6rem;
+  }
+}

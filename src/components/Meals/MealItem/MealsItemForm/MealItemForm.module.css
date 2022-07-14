@@ -1,0 +1,30 @@
+.form {
+  text-align: right;
+  padding-top: 2rem;
+  /* position: aboslute; */
+}
+
+.form button {
+  font: inherit;
+  cursor: pointer;
+  background: rgb(105, 6, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(105, 6, 138, 1) 0%,
+    rgba(179, 69, 252, 1) 35%,
+    rgba(225, 70, 252, 1) 100%
+  );
+  border: 1px solid rgba(105, 6, 138, 1);
+  color: #fff;
+  padding: 0.25rem 2rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.form button:hover,
+.form button:active {
+  background: rgba(179, 69, 252, 1) ;
+  color: #fff;
+  border: 1px solid #fff;
+  border-color: #69068a;
+}
