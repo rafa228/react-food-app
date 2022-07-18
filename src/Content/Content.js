@@ -33,61 +33,83 @@ const Content = () => {
 
   var slides = [];
 
-  contents.map((content, i) => 
-  slides.push({
-    key: i,
-    content: (
-      <Styled.ItemContainer key={content.id}>
+  const onClickHandler = () => {
+    var a = 1;
+    alert((a === 1 ) ? 'success' : 'error');
+  };
+  // if (a === 1){
+  //   alert("success")
+  // }
+  // else {
+  //   alert("error")
+  // }  
+
+  const onClickAlert = () => {
+    const a = 1;
+    let output;
+
+    if (a === 1) {
+      output = "sucess";
+    } 
+    alert(output);
+  };
+
+  contents.map((content, i) =>
+    slides.push({
+      key: i,
+      content: (
+        <Styled.ItemContainer key={content.id}>
           <Styled.CarouselItem>
             <Styled.CarouselButton onClick={() => setSelectedSlide(i)}>
               <img src={content.image} alt={content.id} />
             </Styled.CarouselButton>
           </Styled.CarouselItem>
           <Styled.CarouselItem>
-            {selectedSlide === i ? (
-              <h2>{content.name}</h2>
-            ): null}
+            {selectedSlide === i ? <h2>{content.name}</h2> : null}
           </Styled.CarouselItem>
-      </Styled.ItemContainer>
-    )
-  }))
+        </Styled.ItemContainer>
+      ),
+    })
+  );
   // console.log(slides);
 
   return (
     <>
-        <Styled.Banner>
-          <h1>You Hungry?</h1>
-          <article>
-            <p>
-              Choose your favorite meal from our broad selection of available
-              meals and enjoy a delicious lunch or dinner at home.
-            </p>
-            <Link to="/login" style={{ textDecoration: "none" }}>
-              <p>Yes I'm Hungry</p>
-            </Link>
-          </article>
-        </Styled.Banner>
-        <Styled.Content id="breweries">
-          <ul style={{ listStyleType: "none" }}>
-            {contents.map((content) => (
-              <li key={content.id}>
-                <figure>
-                  <img src={content.image} alt={content.id} />
-                  <figcaption>
-                    <h3>{content.name}</h3>
-                  </figcaption>
-                </figure>
-                <Styled.LinkButton to="/">See More</Styled.LinkButton>
-              </li>
-            ))}
-          </ul>
-        </Styled.Content>
-        <Styled.Content>
-          <Styled.CarouselContainer>
-            <h2>Carousel</h2>
-            {/* <Carousel slides={slides} goToSlide={2} /> */}
-          </Styled.CarouselContainer>
-        </Styled.Content>
+      <Styled.Banner>
+        <h1>You Hungry?</h1>
+        <article>
+          <p>
+            Choose your favorite meal from our broad selection of available
+            meals and enjoy a delicious lunch or dinner at home.
+          </p>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <p>Yes I'm Hungry</p>
+          </Link>
+        </article>
+      </Styled.Banner>
+      <Styled.Content id="breweries">
+        <ul style={{ listStyleType: "none" }}>
+          {contents.map((content) => (
+            <li key={content.id}>
+              <figure>
+                <img src={content.image} alt={content.id} />
+                <figcaption>
+                  <h3>{content.name}</h3>
+                </figcaption>
+              </figure>
+              <Styled.LinkButton to="/">See More</Styled.LinkButton>
+            </li>
+          ))}
+        </ul>
+      </Styled.Content>
+      <Styled.Content>
+        <Styled.CarouselContainer>
+          <h2>Carousel</h2>
+          {/* <button onClick={onClickAlert}>test</button>
+          <button onClick={onClickHandler}>test 1</button> */}
+          {/* <Carousel slides={slides} goToSlide={2} /> */}
+        </Styled.CarouselContainer>
+      </Styled.Content>
     </>
   );
 };
